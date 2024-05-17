@@ -1,0 +1,30 @@
+<!-- DO NOT MODIFY THIS FILE -->
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Reservation Data</title>
+</head>
+
+<body>
+	<h1>Reservation Data</h1>
+    <strong>Name:</strong> <%=name%><br>
+    <strong>Email Address:</strong> <%=email%><br>
+    <strong>Hotel Name:</strong> <%=hotel%><br>
+    <strong>Number of People:</strong> <%=numberOfPeople%><br>
+    <strong>Background Information:</strong> <%=backgroundInformation%><br>
+    <hr>
+    <strong>Task completed at <span id = "dateText"></span></strong>
+    <hr>
+    <a href = "/">HOME</a>
+
+    <script>
+        const currentDate = new Date();
+        const formattedDateTime = currentDate.toString();
+        document.getElementById("dateText").textContent = formattedDateTime;
+    </script>
+
+</body>
+
+</html>

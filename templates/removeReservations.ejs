@@ -1,0 +1,101 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Reservation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+<body>  
+    <style>
+        body{
+            font-family: "Source Sans 3";
+            margin: 0
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        nav li {
+            float: right;
+            border-left: 1px solid #bbb;
+        }
+        nav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav li a:hover:not(.active) {
+            background-color: #111;
+        }
+        .active {
+            background-color: #04AA6D;
+        }
+        nav li:last-child {
+            border-left: none;
+        }
+        #formcontainer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        #formtext {
+            flex: 1;
+        }
+        h1{
+            font-size: 3em;
+            color: #444444;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        p{
+            color: #7A7A7A;
+            font-size: 16px
+        }
+    </style>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="/remove">Remove Reservation</a></li>
+            <li><a href="/checkReservation">Check Reservation</a></li>
+            <li><a href="/register">Make a Reservation</a></li>
+            <li><a href="/browse">Browse Hotels</a></li>
+            <li><a href="/">Home</a></li>
+        </ul>
+    </nav>
+
+    <div id = "formcontainer">
+        <div id = "formtext">
+            <h1>Removing Reservation</h1>
+            <form action="http://localhost:<%=portNumber%>/confirmRemoval" method="post">
+                <fieldset>        
+                    <strong><label>Email Address: <input type="email" name="email"></label></strong>
+                </fieldset>
+                <br>
+                <input type = "reset"/>
+                <input type = "submit" value = "Submit Request" onclick = "submitting"/>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script>
+    function submitting() {
+        let bool = window.confirm('Are you sure you want to remove the application.')
+        return bool
+    }
+</script>
+
+</html>
